@@ -23,7 +23,7 @@ Parameters:
 
   GitHubRepo:
     Type: String
-    Default: github-codepipeline
+    Default: gkanakaws/github-codepipeline
     AllowedPattern: "[A-Za-z0-9-]+"
 
   GitHubBranch:
