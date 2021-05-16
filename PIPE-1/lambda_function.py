@@ -25,7 +25,7 @@ def lambda_handler(event, context):
 #        'body': json.dumps('Modified project in repo:' + folderName)
 #    }
     
-    cpresponse = cpclient.start_pipeline_execution(name=PIPE-1)
+    cpresponse = cpclient.start_pipeline_execution(name='PIPE-1')
                 
 ##def start_code_pipeline(pipelineName):
 #    client = codepipeline_client()
