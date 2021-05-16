@@ -168,7 +168,7 @@ Resources:
             Service: codepipeline.amazonaws.com
           Action: sts:AssumeRole
       ManagedPolicyArns:
-        - arn:aws:iam::aws:policy/AdministratorAccess #TODO: Reduce permissions
+        - arn:aws:iam::aws:policy/AdministratorAccess #TODO: Reduce permissions1
 
   CloudformationRole:
     Type: AWS::IAM::Role
