@@ -6,7 +6,7 @@ def lambda_handler(event, context):
     
     modifiedFiles = event["commits"][0]["modified"]
     #returnCode = start_code_pipeline(PIPE-1)
-    #full path
+    #full path--
     for filePath in modifiedFiles:
         # Extract folder name
         folderName = (filePath[:filePath.find("/")])
