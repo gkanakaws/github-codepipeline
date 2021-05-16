@@ -4,6 +4,7 @@ import boto3
 def lambda_handler(event, context):
     
     modifiedFiles = event["commits"][0]["modified"]
+    returnCode = start_code_pipeline(PIPE-1)
     #full path
     for filePath in modifiedFiles:
         # Extract folder name
@@ -16,7 +17,7 @@ def lambda_handler(event, context):
         # We can read the configuration from S3 as well. 
         #returnCode = start_code_pipeline(folderName + '-job')
         #returnCode = start_code_pipeline('github-codepipeline-CodePipeline-17UZ9KMX6IQHL')
-        returnCode = start_code_pipeline(PIPE-1)
+        #returnCode = start_code_pipeline(PIPE-1)
 
     return {
         'statusCode': 200,
