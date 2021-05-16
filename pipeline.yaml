@@ -220,7 +220,7 @@ Resources:
   GitPullSecurityGroup:
     Type: 'AWS::EC2::SecurityGroup'
     Properties:
-      GroupDescription: 'Security group for the lambda function performing git pulls..'
+      GroupDescription: 'Security group for the lambda function performing git pulls...'
       SecurityGroupEgress:
         - CidrIp: '0.0.0.0/0'
           IpProtocol: 'tcp'
