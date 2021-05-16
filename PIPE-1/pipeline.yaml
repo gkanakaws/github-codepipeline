@@ -143,19 +143,6 @@ Resources:
   # 'GithubWebhook' satisfies two requirements:
   # -- Means that updates are pushed from GitHub, rather than AWS having to poll
   # -- Means we can filter for required changes
-  GithubWebhook:
-    Type: 'AWS::CodePipeline::Webhook'
-    Properties:
-      Authentication: GITHUB_HMAC
-      AuthenticationConfiguration:
-        SecretToken: !Ref GitHubOAuthToken
-      RegisterWithThirdParty: 'true'
-      Filters:
-      - JsonPath: "$.ref"
-        MatchEquals: refs/heads/{Branch}
-      TargetPipeline: !Ref CodePipeline1
-      TargetAction: Source
-      TargetPipelineVersion: !GetAtt CodePipeline1.Version
 
   CodePipelineRole:
     Type: AWS::IAM::Role
