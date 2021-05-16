@@ -1,6 +1,6 @@
 import json
 import boto3
-cplient = boto3.client('codepipeline')
+cpclient = boto3.client('codepipeline')
 
 def lambda_handler(event, context):
     
