@@ -12,6 +12,7 @@ def lambda_handler(event, context):
         # Codepipeline name is foldername-job. 
         # We can read the configuration from S3 as well. 
         returnCode = start_code_pipeline(folderName + '-job')
+        returnCode = start_code_pipeline('github-codepipeline-CodePipeline-17UZ9KMX6IQHL')
 
     return {
         'statusCode': 200,
