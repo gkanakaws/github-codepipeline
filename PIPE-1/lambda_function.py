@@ -1,6 +1,8 @@
+import json
+import boto3
+
 def lambda_handler(event, context):
     
-    import json
     modifiedFiles = event["commits"][0]["modified"]
     #full path
     for filePath in modifiedFiles:
@@ -28,7 +30,6 @@ def start_code_pipeline(pipelineName):
 
 cpclient = None
 def codepipeline_client():
-    import boto3
     global cpclient
     if not cpclient:
         cpclient = boto3.client('codepipeline')
