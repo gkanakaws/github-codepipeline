@@ -2,7 +2,7 @@ AWSTemplateFormatVersion: '2010-09-09'
 # *** Change this to something useful for you!!
 Description: github-codepipeline-app
 
-# This is just here as an example resource
+# This is just here as an example resource!
 
 Resources:
   ApplicationBucket:
