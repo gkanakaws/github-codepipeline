@@ -27,7 +27,7 @@ def lambda_handler(event, context):
     
     cpresponse = cp_client.start_pipeline_execution(name=PIPE-1)
                 
-#def start_code_pipeline(pipelineName):
+##def start_code_pipeline(pipelineName):
 #    client = codepipeline_client()
 #   response = client.start_pipeline_execution(name=pipelineName)
 #   return True
