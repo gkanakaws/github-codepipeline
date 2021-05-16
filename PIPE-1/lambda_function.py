@@ -1,4 +1,5 @@
 def lambda_handler(event, context):
+    
     import json
     modifiedFiles = event["commits"][0]["modified"]
     #full path
@@ -16,7 +17,7 @@ def lambda_handler(event, context):
 
     return {
         'statusCode': 200,
-        'body': json.dumps('Modified project in repo::' + folderName)
+        'body': json.dumps('Modified project in repo:' + folderName)
     }
     
 
