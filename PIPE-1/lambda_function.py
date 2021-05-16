@@ -1,5 +1,6 @@
 import json
 import boto3
+cplient = boto3.client('codepipeline')
 
 def lambda_handler(event, context):
     
@@ -24,18 +25,19 @@ def lambda_handler(event, context):
         'body': json.dumps('Modified project in repo:' + folderName)
     }
     
+    cpresponse = codepipeline_client.start_pipeline_execution(name=PIPE-1)
+                
+#def start_code_pipeline(pipelineName):
+#    client = codepipeline_client()
+#   response = client.start_pipeline_execution(name=pipelineName)
+#   return True
 
-def start_code_pipeline(pipelineName):
-    client = codepipeline_client()
-    response = client.start_pipeline_execution(name=pipelineName)
-    return True
-
-cpclient = None
-def codepipeline_client():
-    global cpclient
-    if not cpclient:
-        cpclient = boto3.client('codepipeline')
-    return cpclient
+#cpclient = None
+#def codepipeline_client():
+#    global cpclient
+#    if not cpclient:
+#        cpclient = boto3.client('codepipeline')
+#    return cpclient
    
 
 # https://gitpython.readthedocs.io/en/stable/tutorial.html
