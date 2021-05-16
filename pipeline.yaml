@@ -163,17 +163,11 @@ Resources:
           Targets:
             - Arn: !GetAtt CodePipelineCustomActionFunction.Arn
               Id: "CodePipelineCustomActionTrigger"
-              
+
   CodePipelineCustomActionFunction:
     Type: AWS::Lambda::Function
     Properties:
         Handler: lambda_function.lambda_handler
-        VpcConfig:
-          SecurityGroupIds: [!Ref GitPullSecurityGroup]
-          SubnetIds: !Ref GitPullLambdaSubnet
-        Environment:
-            Variables:
-                GitPullCodeBuild: !Ref GitPullCodeBuild
         Role: !GetAtt 'LambdaExecutionRole.Arn'
         Runtime: python3.7
         Timeout: 900
@@ -223,3 +217,16 @@ Resources:
                         - codebuild:BatchGetBuilds
                       Resource:
                         - !GetAtt GitPullCodeBuild.Arn
+  GitPullSecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription: 'Security group for the lambda function performing git pulls..'
+      SecurityGroupEgress:
+        - CidrIp: '0.0.0.0/0'
+          IpProtocol: 'tcp'
+          FromPort: '0'
+          ToPort: '65535'
+      VpcId: !Ref GitPullLambdaVpc
+
+
+
