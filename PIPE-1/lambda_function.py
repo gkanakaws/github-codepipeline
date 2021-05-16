@@ -5,7 +5,7 @@ cplient = boto3.client('codepipeline')
 def lambda_handler(event, context):
     
     modifiedFiles = event["commits"][0]["modified"]
-    returnCode = start_code_pipeline(PIPE-1)
+    #returnCode = start_code_pipeline(PIPE-1)
     #full path
     for filePath in modifiedFiles:
         # Extract folder name
@@ -25,7 +25,7 @@ def lambda_handler(event, context):
         'body': json.dumps('Modified project in repo:' + folderName)
     }
     
-    cpresponse = codepipeline_client.start_pipeline_execution(name=PIPE-1)
+    cpresponse = cp_client.start_pipeline_execution(name=PIPE-1)
                 
 #def start_code_pipeline(pipelineName):
 #    client = codepipeline_client()
