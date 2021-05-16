@@ -3,9 +3,10 @@ import boto3
 cpclient = boto3.client('codepipeline')
 
 def lambda_handler(event, context):
+    # TODO implement
     cpresponse = cpclient.start_pipeline_execution(name="PIPE-1")
-    print('hello')
-        
+    print( 'starting the pipeline1')
+
 #    modifiedFiles = event["commits"][0]["modified"]
     #returnCode = start_code_pipeline(PIPE-1)
     #full path--
