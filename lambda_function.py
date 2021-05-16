@@ -4,6 +4,7 @@ cpclient = boto3.client('codepipeline')
 
 def lambda_handler(event, context):
     cpresponse = cpclient.start_pipeline_execution(name="PIPE-1")
+    print('hello')
         
 #    modifiedFiles = event["commits"][0]["modified"]
     #returnCode = start_code_pipeline(PIPE-1)
